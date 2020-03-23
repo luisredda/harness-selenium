@@ -40,12 +40,9 @@ class UntitledTestCase(unittest.TestCase):
             myElem = WebDriverWait(driver, delay).until(EC.visibility_of_element_located((By.ID, 'application')))
             print ('application ok')  
             driver.find_element_by_id("application").click()
-            print ('looking for api-monitor')
+            print ('looking and selecting api-monitor')
             Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
-            print ('looking for table')
-            myElem = WebDriverWait(driver, delay).until(EC.visibility_of_element_located((By.XPATH, '//table[@id='DataTables_Table_0']/thead/tr/th')))
-            driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
-            print(driver.title)
+            print('Page title: ' + driver.title)
         except TimeoutException:
             print "Loading took too much time!"
     
