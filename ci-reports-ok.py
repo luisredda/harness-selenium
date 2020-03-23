@@ -19,7 +19,7 @@ class UntitledTestCase(unittest.TestCase):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.implicitly_wait(60)
+        self.driver.implicitly_wait(75)
         self.base_url = "https://www.google.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -29,16 +29,17 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-        delay = 50 
+        delay = 75 
         try:
+            driver.implicitly_wait(75)
             print ('looking for Area Issues')
             driver.find_element_by_id("area-issues").click()
             print ('looking for APMMultiCanais')
             Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
             print ('looking for application')
             myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'application')))
-            print ('application ok')   
-            #driver.find_element_by_id("application").click()
+            print ('application ok')  
+            driver.find_element_by_id("application").click()
             print ('looking for api-monitor')
             myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'api-monitor')))
             print ('api-monitor ok')   
