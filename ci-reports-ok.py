@@ -43,7 +43,7 @@ class UntitledTestCase(unittest.TestCase):
             print ('looking for api-monitor')
             Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
             print ('looking for table')
-             myElem = WebDriverWait(driver, delay).until(EC.visibility_of_element_located((By.XPATH, '//table[@id='DataTables_Table_0']/thead/tr/th')))
+            myElem = WebDriverWait(driver, delay).until(EC.visibility_of_element_located((By.XPATH, '//table[@id='DataTables_Table_0']/thead/tr/th')))
             driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
             print(driver.title)
         except TimeoutException:
