@@ -29,7 +29,7 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-        delay = 30 
+        delay = 300 
         try:
             print ('looking for Area Issues')
             driver.find_element_by_id("area-issues").click()
@@ -39,10 +39,10 @@ class UntitledTestCase(unittest.TestCase):
             myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'application')))
             print ('application ok')   
             #driver.find_element_by_id("application").click()
-            #print ('looking for api-monitor')
-            #myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'api-monitor')))
-            #print ('api-monitor ok')   
-            #Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
+            print ('looking for api-monitor')
+            myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'api-monitor')))
+            print ('api-monitor ok')   
+            Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
             #print ('looking for table')
             #driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
             print(driver.title)
