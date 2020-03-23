@@ -14,7 +14,7 @@ class UntitledTestCase(unittest.TestCase):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.implicitly_wait(60)
+        self.driver.implicitly_wait(200)
         self.base_url = "https://www.google.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
