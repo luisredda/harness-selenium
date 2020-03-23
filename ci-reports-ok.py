@@ -24,8 +24,8 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-      #  print ('looking for APMMultiCanais')
-      #  driver.find_element_by_id("area-issues").click()
+        print ('looking for APMMultiCanais')
+        driver.find_element_by_id("area-issues").click()
       #  Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
       #  driver.find_element_by_id("application").click()
       #  print 'looking for api-monitor'
