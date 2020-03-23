@@ -42,8 +42,8 @@ class UntitledTestCase(unittest.TestCase):
             driver.find_element_by_id("application").click()
             print ('looking for api-monitor')
             Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
-            #print ('looking for table')
-            #driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
+            print ('looking for table')
+            driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
             print(driver.title)
         except TimeoutException:
             print "Loading took too much time!"
