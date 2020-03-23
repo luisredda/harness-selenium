@@ -29,7 +29,7 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-        delay = 300 
+        delay = 50 
         try:
             print ('looking for Area Issues')
             driver.find_element_by_id("area-issues").click()
