@@ -14,7 +14,7 @@ class UntitledTestCase(unittest.TestCase):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.implicitly_wait(120)
+        self.driver.implicitly_wait(60)
         self.base_url = "https://www.google.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -24,14 +24,16 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-        print ('looking for APMMultiCanais')
+        print ('looking for Area Issues')
         driver.find_element_by_id("area-issues").click()
+        print ('looking for APMMultiCanais')
         Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
+        print ('looking for application')
         driver.find_element_by_id("application").click()
-        print 'looking for api-monitor'
-      #  Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
-      #  print 'select api-monitor'
-      #  driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
+        print ('looking for api-monitor')
+        Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
+        print ('looking for table')
+        driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
         print(driver.title)
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
