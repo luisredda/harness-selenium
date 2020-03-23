@@ -24,14 +24,14 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         print('opening ci-reports page')
         driver.get(url)
-        print ('looking for APMMultiCanais')
-        driver.find_element_by_id("area-issues").click()
-        Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
-        driver.find_element_by_id("application").click()
-        print 'looking for api-monitor'
-        Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
-        print 'select api-monitor'
-        driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
+      #  print ('looking for APMMultiCanais')
+      #  driver.find_element_by_id("area-issues").click()
+      #  Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
+      #  driver.find_element_by_id("application").click()
+      #  print 'looking for api-monitor'
+      #  Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
+      #  print 'select api-monitor'
+      #  driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
         print(driver.title)
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
