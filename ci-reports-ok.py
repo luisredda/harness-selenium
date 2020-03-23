@@ -27,8 +27,8 @@ class UntitledTestCase(unittest.TestCase):
         print ('looking for APMMultiCanais')
         driver.find_element_by_id("area-issues").click()
         Select(driver.find_element_by_id("area-issues")).select_by_visible_text("APIMultiCanais")
-      #  driver.find_element_by_id("application").click()
-      #  print 'looking for api-monitor'
+        driver.find_element_by_id("application").click()
+        print 'looking for api-monitor'
       #  Select(driver.find_element_by_id("application")).select_by_visible_text("api-monitor")
       #  print 'select api-monitor'
       #  driver.find_element_by_xpath("//table[@id='DataTables_Table_0']/thead/tr/th").click()
